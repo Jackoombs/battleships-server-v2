@@ -6,7 +6,10 @@ const PORT = Number(process.env.PORT) || 8080;
 
 const io = new Server(PORT, {
   cors: {
-    origin: ["http://localhost:5173", "*"],
+    origin: [
+      "http://localhost:5173",
+      "https://battleships-client-v2.vercel.app",
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },
