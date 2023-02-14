@@ -22,6 +22,7 @@
     "typescript": "~4.9"
   },
   "scripts": {
+    "rimraf": "./node_modules/rimraf/bin.js",
     "clean": "rimraf coverage build tmp",
     "build": "rimraf ./build && tsc",
     "start": "node build/src/main.js",
