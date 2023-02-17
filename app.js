@@ -57,10 +57,12 @@ io.on("connection", (socket) => {
     }
   });
   socket.on("playerFire", (room, coord) => {
+    console.log("playerfire", room, coord);
     socket.to(room).emit("opponentReceiveFire", coord);
   });
   socket.on("endRound", (room, coord, isHit, isSunk) => {
-    io.to(room).emit("endRound", coord, isHit, isSunk);
+    console.log("endRound", room, coord, isHit, isSunk);
+    io.in(room).emit("endRound", coord, isHit, isSunk);
   });
   socket.on("isWin", (room) => {
     socket.emit("gameResult", false);
